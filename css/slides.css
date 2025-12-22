@@ -1,0 +1,104 @@
+/* Slide Presentation Styles */
+.slide-body {
+  overflow: hidden;
+  background-color: #f0f2f5;
+  /* Light gray background to make the white slide pop */
+  color: #1a1a1a;
+  /* Darker black for text */
+}
+
+.slide-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 0.5s ease;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide-content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.glass-cover {
+  background: #ffffff;
+  /* pure white card */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  /* Stronger, smoother shadow */
+  max-width: 900px;
+  width: 100%;
+}
+
+.slide-footer {
+  height: 10vh;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  /* Visible border */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.slide-controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #dee2e6;
+  /* Border for buttons */
+  background: #f8f9fa;
+  color: #212529;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.slide-controls button:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
