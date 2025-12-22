@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+  --secondary-gradient: linear-gradient(135deg, #4ECDC4 0%, #556270 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --text-primary: #2d3436;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #f8f9fa;
+  color: var(--text-primary);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: var(--glass-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  /* Simpler, darker gradient */
+  color: white;
+  padding: 4rem 0;
+  /* Reduced padding */
+  border-bottom: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #000;
+}
+
+.subject-card {
+  height: 100%;
+  border: none;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-header-custom {
+  padding: 2rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bg-quality {
+  background: linear-gradient(45deg, #FF512F, #DD2476);
+}
+
+.bg-logic {
+  background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
+}
+
+.bg-tcc {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.btn-custom {
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.btn-custom:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: #2d3436;
+  color: white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
