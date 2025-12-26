@@ -51,7 +51,11 @@
         <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i
             class="fas fa-check text-success me-3"></i> Exemplos de temas</li>
         <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i
-            class="fas fa-check text-success me-3"></i> Busca de artigos científicos</li>
+            class="fas fa-check text-success me-3"></i> Busca de artigos científicos (Scholar)</li>
+        <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i
+            class="fas fa-check text-success me-3"></i> Pesquisa Bibliométrica com IA</li>
+        <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i
+            class="fas fa-check text-success me-3"></i> O Funil de Pesquisa (Screening)</li>
         <li class="list-group-item bg-transparent text-dark border-0"><i class="fas fa-check text-success me-3"></i>
           Atividade prática em sala</li>
       </ul>
@@ -480,40 +484,34 @@
     <!-- Slide 10: Como Fazer a Busca -->
     <div class="slide" id="slide-10">
       <div class="slide-content">
-        <h2 class="display-5 fw-bold mb-4 text-dark text-center">Como Fazer uma Boa Busca?</h2>
+        <h2 class="display-5 fw-bold mb-4 text-dark text-center">Estratégia de Busca Eficiente</h2>
         <div class="row g-4 justify-content-center">
           <div class="col-md-10">
             <div class="card border-primary shadow-lg mb-3">
               <div class="card-body">
-                <h5 class="text-primary"><i class="fas fa-search me-2"></i>1. Use palavras-chave específicas</h5>
-                <p class="mb-0 small">Ao invés de "inteligência artificial", use "deep learning image classification" ou
-                  "NLP sentiment analysis"</p>
+                <h5 class="text-primary"><i class="fas fa-search me-2"></i>1. String de Busca (Query)</h5>
+                <p class="mb-0 small">Não faça perguntas! Use palavras-chave combinadas.</p>
+                <div class="bg-light p-2 mt-2 rounded border">
+                  <code>"machine learning" AND "health" AND "diagnosis"</code>
+                </div>
               </div>
             </div>
             <div class="card border-success shadow-lg mb-3">
               <div class="card-body">
-                <h5 class="text-success"><i class="fas fa-language me-2"></i>2. Busque em inglês</h5>
-                <p class="mb-0 small">A maioria dos artigos de referência está em inglês. Use termos técnicos em inglês
-                  para melhores resultados.</p>
-              </div>
-            </div>
-            <div class="card border-warning shadow-lg mb-3">
-              <div class="card-body">
-                <h5 class="text-warning"><i class="fas fa-calendar-alt me-2"></i>3. Filtre por data</h5>
-                <p class="mb-0 small">Priorize artigos dos últimos 5 anos. Tecnologia evolui rápido!</p>
-              </div>
-            </div>
-            <div class="card border-info shadow-lg mb-3">
-              <div class="card-body">
-                <h5 class="text-info"><i class="fas fa-quote-right me-2"></i>4. Verifique citações</h5>
-                <p class="mb-0 small">Artigos muito citados geralmente são mais relevantes e confiáveis.</p>
+                <h5 class="text-success"><i class="fas fa-filter me-2"></i>2. Filtros do Google Scholar</h5>
+                <ul class="mb-0 small">
+                  <li><strong>Ano:</strong> "Desde 2021" (Últimos 5 anos)</li>
+                  <li><strong>Idioma:</strong> "Pesquisar páginas em Português" (se necessário, mas Inglês é melhor)
+                  </li>
+                  <li><strong>Tipo:</strong> Artigos de revisão (Review) são ótimos para começar!</li>
+                </ul>
               </div>
             </div>
             <div class="card border-danger shadow-lg">
               <div class="card-body">
-                <h5 class="text-danger"><i class="fas fa-file-pdf me-2"></i>5. Leia o abstract primeiro</h5>
-                <p class="mb-0 small">Não perca tempo! Leia o resumo para ver se o artigo é relevante antes de baixar.
-                </p>
+                <h5 class="text-danger"><i class="fas fa-quote-right me-2"></i>3. Bola de Neve (Snowballing)</h5>
+                <p class="mb-0 small">Achou um artigo perfeito? <strong>Clique em "Citado por..."</strong> para ver quem
+                  usou ele como referência. É a melhor forma de achar trabalhos recentes sobre o mesmo tema.</p>
               </div>
             </div>
           </div>
@@ -521,8 +519,128 @@
       </div>
     </div>
 
-    <!-- Slide 11: Atividade Prática em Sala -->
+    <!-- Slide 11: Pesquisa com IA -->
     <div class="slide" id="slide-11">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-4 text-dark text-center">Pesquisa Bibliométrica com IA</h2>
+        <p class="text-center text-muted mb-4">Use a IA como sua assistente de pesquisa para mapear o terreno.</p>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-lg bg-gradient-primary text-white"
+              style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <div class="card-body p-4 text-center">
+                <i class="fas fa-robot fa-3x mb-3"></i>
+                <h4 class="fw-bold">Ferramentas</h4>
+                <hr class="opacity-50">
+                <ul class="text-start small mb-0">
+                  <li><strong>Gemini / ChatGPT:</strong> Visão geral e brainstorming.</li>
+                  <li><strong>Perplexity:</strong> Busca conectada à web com fontes.</li>
+                  <li><strong>Consensus / Scite:</strong> Respostas baseadas apenas em papers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-header bg-white border-bottom-0 pt-4">
+                <h5 class="fw-bold text-primary"><i class="fas fa-comment-dots me-2"></i>Prompts para Bibliometria
+                  "Express"</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <h6 class="fw-bold text-dark">1. Estado da Arte</h6>
+                  <div class="bg-light p-3 rounded text-muted fst-italic border-start border-4 border-primary">
+                    "Quais são as principais tendências e desafios atuais na área de [SEU TEMA] nos últimos 3 anos?"
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <h6 class="fw-bold text-dark">2. Principais Autores e Obras</h6>
+                  <div class="bg-light p-3 rounded text-muted fst-italic border-start border-4 border-success">
+                    "Liste os 5 autores mais citados ou obras seminais sobre [SEU TEMA]. Indique por que são
+                    relevantes."
+                  </div>
+                </div>
+                <div class="alert alert-warning py-2 mb-0 small">
+                  <i class="fas fa-exclamation-triangle me-2"></i><strong>Cuidado com Alucinações:</strong> A IA pode
+                  inventar referências. Sempre verifique o título no Google Scholar!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12: Funil de Pesquisa (Screening) -->
+    <div class="slide" id="slide-12">
+      <div class="slide-content text-center">
+        <h2 class="display-5 fw-bold mb-4 text-dark">O Funil de Pesquisa (Screening)</h2>
+        <p class="lead text-secondary mb-5">Como filtrar 1.000 artigos e sobrar apenas os 5 melhores?</p>
+
+        <div class="row justify-content-center position-relative">
+          <!-- Connector Line using CSS border on a pseudo-column meant to be centered? Let's use simple stacked cards -->
+
+          <div class="col-md-8">
+            <!-- Step 1 -->
+            <div class="card mb-3 border-secondary shadow-sm" style="transform: scale(1);">
+              <div class="card-body d-flex align-items-center">
+                <div class="bg-secondary text-white rounded-circle p-3 me-3 fw-bold"
+                  style="width: 50px; height: 50px; display:flex; align-items:center; justify-content:center;">1</div>
+                <div class="text-start flex-grow-1">
+                  <h5 class="fw-bold mb-0">Identificação (Busca)</h5>
+                  <small class="text-muted">Resultados brutos da busca (Ex: 5.000 artigos sobre "AI Health").</small>
+                </div>
+                <span class="badge bg-secondary rounded-pill">Muitos</span>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="text-center mb-3 text-muted"><i class="fas fa-arrow-down fa-2x"></i></div>
+
+            <!-- Step 2 -->
+            <div class="card mb-3 border-warning shadow-sm" style="transform: scale(0.95);">
+              <div class="card-body d-flex align-items-center">
+                <div class="bg-warning text-dark rounded-circle p-3 me-3 fw-bold"
+                  style="width: 50px; height: 50px; display:flex; align-items:center; justify-content:center;">2</div>
+                <div class="text-start flex-grow-1">
+                  <h5 class="fw-bold mb-0">Screening (Triagem)</h5>
+                  <small class="text-muted">Ler apenas <strong>Título e Resumo (Abstract)</strong>. Descarta o que não
+                    tem nada a ver.</small>
+                </div>
+                <span class="badge bg-warning text-dark rounded-pill">Alguns</span>
+              </div>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="text-center mb-3 text-muted"><i class="fas fa-arrow-down fa-2x"></i></div>
+
+            <!-- Step 3 -->
+            <div class="card mb-3 border-success shadow-lg border-2" style="transform: scale(0.9);">
+              <div class="card-body d-flex align-items-center">
+                <div class="bg-success text-white rounded-circle p-3 me-3 fw-bold"
+                  style="width: 50px; height: 50px; display:flex; align-items:center; justify-content:center;">3</div>
+                <div class="text-start flex-grow-1">
+                  <h5 class="fw-bold mb-0 text-success">Elegibilidade (Leitura Completa)</h5>
+                  <small class="text-muted">Ler o artigo inteiro. Ele realmente serve pro seu TCC?</small>
+                </div>
+                <span class="badge bg-success rounded-pill">Poucos</span>
+              </div>
+            </div>
+
+            <!-- Included -->
+            <div class="mt-2">
+              <span class="badge bg-primary px-4 py-2 rounded-pill shadow">Artigos Incluídos no TCC</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 13: Atividade Prática em Sala -->
+    <div class="slide" id="slide-13">
       <div class="slide-content text-center">
         <h2 class="display-5 fw-bold mb-4 text-dark">Atividade Prática - AGORA!</h2>
         <div class="alert alert-warning border-0 shadow-lg mb-4">
@@ -547,10 +665,9 @@
                 <h5 class="text-success mb-3"><i class="fas fa-search me-2"></i>Parte 2: Busca de Artigos (20 min)</h5>
                 <ol class="mb-0">
                   <li>Acessem Google Scholar ou IEEE Xplore</li>
-                  <li>Busquem artigos sobre suas ideias</li>
-                  <li>Encontrem pelo menos 3 artigos relevantes</li>
-                  <li>Leiam os abstracts e anotem os principais conceitos</li>
-                  <li>Salvem os PDFs ou links dos artigos</li>
+                  <li>Busquem artigos (Scholar) ou usem IA (Perplexity/Gemini) para mapear o tema</li>
+                  <li>Apliquem o <strong>Screening</strong>: Leiam Título e Resumo para selecionar os melhores</li>
+                  <li>Encontrem pelo menos 3 artigos relevantes e salvem</li>
                 </ol>
               </div>
             </div>
@@ -559,8 +676,8 @@
       </div>
     </div>
 
-    <!-- Slide 12: O que Entregar -->
-    <div class="slide" id="slide-12">
+    <!-- Slide 14: O que Entregar -->
+    <div class="slide" id="slide-14">
       <div class="slide-content text-center">
         <h2 class="display-5 fw-bold mb-4 text-dark">O que Entregar Hoje</h2>
         <div class="row g-4 justify-content-center">
@@ -574,10 +691,11 @@
                 <ol>
                   <li><strong>Integrantes:</strong> Nome completo de todos do grupo</li>
                   <li><strong>Lista de Ideias:</strong> As 5+ ideias do brainstorming</li>
-                  <li><strong>Tema Escolhido:</strong> 1 ou 2 ideias que vão explorar</li>
-                  <li><strong>Palavras-chave:</strong> Termos em inglês usados na busca</li>
-                  <li><strong>Artigos Encontrados:</strong> Título, autores, ano e link de 3 artigos</li>
-                  <li><strong>Resumo:</strong> 1 parágrafo sobre cada artigo (o que ele propõe)</li>
+                  <li><strong>Tema Escolhido:</strong> 1 ideia principal</li>
+                  <li><strong>Pesquisa IA:</strong> Resumo do "Estado da Arte" gerado pela IA (Gemini/Perplexity)</li>
+                  <li><strong>Artigos Selecionados:</strong> 3 artigos validados no Google Scholar (Título, Autores,
+                    Ano)</li>
+                  <li><strong>Justificativa:</strong> Por que esses artigos passaram pelo seu "Screening"?</li>
                 </ol>
                 <hr>
                 <p class="mb-0 text-danger"><i class="fas fa-exclamation-circle me-2"></i><strong>Enviar no Moodle até o
@@ -589,8 +707,8 @@
       </div>
     </div>
 
-    <!-- Slide 13: Conclusion -->
-    <div class="slide" id="slide-13">
+    <!-- Slide 15: Conclusion -->
+    <div class="slide" id="slide-15">
 
       <div class="text-center slide-content">
         <h1 class="display-3 fw-bold mb-4 text-dark">Bom Trabalho!</h1>
@@ -599,7 +717,7 @@
           <h5><i class="fas fa-lightbulb me-2"></i>Lembrete Final</h5>
           <ul class="text-start mb-0">
             <li>Formem os grupos e façam brainstorming</li>
-            <li>Busquem pelo menos 3 artigos relevantes</li>
+            <li>Use a IA para explorar o tema e o Google Scholar para buscar fontes</li>
             <li>Entreguem o documento no Moodle até o final da aula</li>
             <li>Qualquer dúvida, me chamem!</li>
           </ul>
@@ -633,7 +751,7 @@
 
   <script>
     let currentSlide = 1;
-    const totalSlides = 13;
+    const totalSlides = 15;
 
     function showSlide(n) {
       // Remove active class from all slides
