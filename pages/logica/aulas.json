@@ -1,0 +1,92 @@
+[
+  {
+    "numero": 1,
+    "titulo": "Introdução à Lógica e Ferramentas",
+    "conteudo": "Apresentação da disciplina e do Projeto Semestral. O que é Lógica? Lógica no cotidiano. Tutorial: Criando uma conta no Google, Criando um Notebook no Google Colab, Compartilhamento de links. Introdução ao pensamento computacional.",
+    "avaliacao": false
+  },
+  {
+    "numero": 2,
+    "titulo": "Fundamentos da Lógica",
+    "conteudo": "História da Lógica. Premissas e Conclusões. Argumentos válidos e inválidos. Falácias lógicas comuns. Exercícios de lógica informal.",
+    "avaliacao": false
+  },
+  {
+    "numero": 3,
+    "titulo": "Lógica Proposicional",
+    "conteudo": "Proposições simples e compostas. Conectivos Lógicos (E, OU, NÃO, SE...ENTÃO, SE E SOMENTE SE). Simbolização de sentenças.",
+    "avaliacao": false
+  },
+  {
+    "numero": 4,
+    "titulo": "Tabelas Verdade",
+    "conteudo": "Construção de Tabelas Verdade. Tautologia, Contradição e Contingência. Exercícios de fixação de tabelas verdade.",
+    "avaliacao": false
+  },
+  {
+    "numero": 5,
+    "titulo": "Avaliação 1",
+    "conteudo": "Avaliação Avaliativa 1 (Foco em Lógica Informal, Proposicional e Tabelas Verdade). Sem conteúdo novo.",
+    "avaliacao": true
+  },
+  {
+    "numero": 6,
+    "titulo": "Álgebra Booleana e Portas Lógicas",
+    "conteudo": "Introdução à Álgebra Booleana. Portas Lógicas Básicas (AND, OR, NOT). Portas Derivadas (NAND, NOR, XOR, XNOR). Circuitos simples.",
+    "avaliacao": false
+  },
+  {
+    "numero": 7,
+    "titulo": "Introdução ao Python e Condicionais",
+    "conteudo": "Ambiente Google Colab. Variáveis e Tipos de Dados. Operadores Lógicos em Python. Estruturas de Decisão (if, elif, else).",
+    "avaliacao": false
+  },
+  {
+    "numero": 8,
+    "titulo": "Lógica de Programação: Loops e Funções",
+    "conteudo": "Laços de Repetição (for/while) para gerar tabelas verdade. Introdução a Funções (def).",
+    "avaliacao": false
+  },
+  {
+    "numero": 9,
+    "titulo": "Avaliação 2",
+    "conteudo": "Avaliação Avaliativa 2 (Foco em Álgebra Booleana, Portas Lógicas e Introdução ao Python). Sem conteúdo novo.",
+    "avaliacao": true
+  },
+  {
+    "numero": 10,
+    "titulo": "Simulação de Hardware com Python",
+    "conteudo": "Implementando portas lógicas como funções. Criando circuitos complexos via código. Automação da verificação lógica.",
+    "avaliacao": false
+  },
+  {
+    "numero": 11,
+    "titulo": "Finalização do Projeto Semestral",
+    "conteudo": "Aula dedicada à orientação final, montagem da apresentação e testes finais dos projetos no Colab.",
+    "avaliacao": false
+  },
+  {
+    "numero": 12,
+    "titulo": "Apresentação do Projeto (Prova Oral)",
+    "conteudo": "Avaliação Avaliativa 3. Apresentação oral e demonstração do projeto prático. Arguição sobre a lógica utilizada.",
+    "avaliacao": true
+  },
+  {
+    "numero": 13,
+    "titulo": "Recuperação Geral",
+    "conteudo": "Revisão intensiva e prova de recuperação abrangendo Lógica Formal e Computacional.",
+    "avaliacao": false
+  },
+  {
+    "numero": 14,
+    "titulo": "Revisão Geral e Exame Final",
+    "conteudo": "Revisão de todo o conteúdo. Exame final para quem não atingiu a média.",
+    "avaliacao": false
+  },
+  {
+    "numero": 15,
+    "titulo": "Encerramento",
+    "conteudo": "Feedback final, entrega de notas e encerramento da disciplina.",
+    "avaliacao": false
+  }
+]

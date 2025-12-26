@@ -1,5 +1,6 @@
 import os
 import re
+import json
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -11,14 +12,16 @@ SUBJECTS = [
         'folder': 'qualidade',
         'course_tag': 'TADS',
         'subject_name': 'Qualidade de Software',
-        'prefix': 'Aula'
+        'prefix': 'Aula',
+        'json_source': 'pages/qualidade/aulas.json'
     },
     {
         'file': 'introducao-logica.html',
         'folder': 'logica',
         'course_tag': 'Redes de Computadores',
         'subject_name': 'Introdução à Lógica',
-        'prefix': 'Aula'
+        'prefix': 'Aula',
+        'json_source': 'pages/logica/aulas.json'
     },
     {
         'file': 'tcc.html',
@@ -69,10 +72,7 @@ SLIDE_TEMPLATE = """<!DOCTYPE html>
         <div class="slide" id="slide-2">
             <h1 class="display-4 fw-bold mb-4 text-dark">Agenda</h1>
             <ul class="list-group list-group-flush fs-4 text-start bg-transparent">
-                <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> Tópico 1: Introdução</li>
-                <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> Tópico 2: Conceitos Fundamentais</li>
-                <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> Tópico 3: Aplicação Prática</li>
-                <li class="list-group-item bg-transparent text-dark border-0"><i class="fas fa-check text-success me-3"></i> Tópico 4: Conclusão</li>
+                {agenda_html}
             </ul>
         </div>
 
@@ -195,6 +195,13 @@ SLIDE_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
+def get_lesson_number(title):
+    # Extracts number from "Aula 05" -> 5
+    match = re.search(r'\d+', title)
+    if match:
+        return int(match.group(0))
+    return None
+
 def process_subject(subject_info):
     file_path = os.path.join(PAGES_DIR, subject_info['file'])
     folder_path = os.path.join(PAGES_DIR, subject_info['folder'])
@@ -205,56 +212,93 @@ def process_subject(subject_info):
 
     print(f"Processing {subject_info['subject_name']}...")
 
+    # Load JSON data if available
+    json_lessons = {}
+    if 'json_source' in subject_info:
+        json_path = os.path.join(BASE_DIR, subject_info['json_source'])
+        if os.path.exists(json_path):
+            with open(json_path, 'r', encoding='utf-8') as jf:
+                data = json.load(jf)
+                # Map by number for easy lookup
+                for item in data:
+                    json_lessons[item['numero']] = item
+            print(f"  Loaded JSON data from {subject_info['json_source']}")
+
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # Regex to find lesson blocks
-    # Looking for: <a href="..." ...> ... <h5 ...>Aula XX</h5> ... <p ...>Desc</p> ... </a>
-    # We capture the whole A tag to replace the href
-
-    # We need a robust regex to iterate over matches and update them.
-    # Pattern explanation:
-    # <a href="(.*?)" (capture href)
-    # (.*?) (content before h5)
-    # <h5.*?>(.*?)</h5> (capture title, e.g., Aula 01)
-    # (.*?) (content before p)
-    # <p.*?>(.*?)</p> (capture desc)
-
+    # Pattern to match the new structure:
+    # <a href="LOGICA/FILENAME.HTML" ...> ... <h5 ...>TITLE</h5> ... <p ...>Aula XX</p>
     pattern = re.compile(
         r'(<a\s+href=")([^"]*)("\s+class="list-group-item.*?<h5.*?>)(.*?)(</h5>.*?<p.*?>)(.*?)(</p>)',
         re.DOTALL
     )
 
     new_content = content
-    offset = 0
 
     for match in pattern.finditer(content):
         # Groups:
-        # 1: <a href="
-        # 2: current_href (e.g. # or old link)
-        # 3: " class=... ... <h5 ...>
-        # 4: Lesson Title (e.g. Aula 01)
-        # 5: </h5> ... <p ...>
-        # 6: Description
-        # 7: </p>
+        # 2: href (e.g. logica/filename.html)
+        # 4: Title (e.g. Introdução...)
+        # 6: Description (e.g. Aula 01)
 
-        old_href = match.group(2)
+        href = match.group(2)
         lesson_title = match.group(4).strip()
-        lesson_desc = match.group(6).strip()
+        lesson_desc_field = match.group(6).strip() # "Aula 01"
 
-        # Clean title for filename (Aula 01 -> aula01, Semana 01 -> semana01)
-        # Remove accents/special chars just in case, though basic alphanumeric is expected
-        clean_title = lesson_title.lower().replace(' ', '').replace('ã', 'a').replace('ç', 'c')
+        # Logic for filename generation matching regenerate_cards.py
+        # We RE-GENERATE the filename from the Title to ensure consistency,
+        # OR we trust the HREF if regenerate_cards already ran.
+        # Since regenerate_cards ran, header hrefs are correct.
+        # But we need to write the file to the location specified by the href.
 
-        filename = f"{clean_title}.html"
+        # Extract filename from href
+        if '/' in href:
+            filename = href.split('/')[-1]
+        else:
+            filename = href
+
+        # Double check filename against title just in case?
+        # No, trust the HREF because that's what the link points to.
+
         full_slide_path = os.path.join(folder_path, filename)
 
+        # Get Lesson Number from "Aula XX"
+        lesson_num = get_lesson_number(lesson_desc_field)
+
+        # Dynamic Agenda generation
+        agenda_html = ""
+
+        if lesson_num in json_lessons:
+             # Use JSON content
+             raw_content = json_lessons[lesson_num].get('conteudo', '')
+             if isinstance(raw_content, list):
+                 topics = raw_content
+             else:
+                 topics = [t.strip() for t in re.split(r'[.;]', raw_content) if t.strip()]
+
+             for topic in topics:
+                 agenda_html += f'<li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> {topic}</li>\\n'
+        else:
+            agenda_html = """
+                <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> Tópico 1</li>
+            """
+
         # Generate HTML content
+        # Note: lesson_desc is used in the slide. "Aula 01" is maybe too short for "Uma visão geral sobre {lesson_desc}".
+        # But we don't have the old description anymore in the HTML.
+        # We can pull description from JSON if we want?
+        # JSON has 'conteudo'.
+        # For now, let's just use the Title as description or generic.
+        # Actually, using "Aula 01" as description in "Uma visão geral sobre Aula 01" is okay.
+
         slide_html = SLIDE_TEMPLATE.format(
             lesson_title=lesson_title,
             subject_name=subject_info['subject_name'],
-            lesson_desc=lesson_desc,
-            parent_file=subject_info['file']
+            lesson_desc=lesson_desc_field,
+            parent_file=subject_info['file'],
+            agenda_html=agenda_html
         )
 
         # Write slide file
@@ -263,33 +307,9 @@ def process_subject(subject_info):
 
         print(f"  Generated {filename}")
 
-        # Update Main File Link
-        # structure is relative: folder/filename
-        new_href = f"{subject_info['folder']}/{filename}"
-
-        # Replace only this specific occurrence in the string
-        # We replace the href part.
-        # Since finditer gives us positions in the original string, we can construct the new string
-        # But replacing repeatedly changes indices.
-        # easier: using re.sub with a callback function
-
-    def replacer(m):
-        # m.group(4) is title
-        title = m.group(4).strip()
-        clean_title = title.lower().replace(' ', '').replace('ã', 'a').replace('ç', 'c')
-        filename = f"{clean_title}.html"
-        new_link = f"{subject_info['folder']}/{filename}"
-
-        # Return reconstructed string with new link
-        return f'{m.group(1)}{new_link}{m.group(3)}{m.group(4)}{m.group(5)}{m.group(6)}{m.group(7)}'
-
-    new_content = pattern.sub(replacer, content)
-
-    # Save updated subject page
-    with open(file_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
-
-    print(f"Updated links in {subject_info['file']}")
+    # skipped link update logic because regenerate_cards.py handles it for Logic,
+    # and for others we assume links are correct or manual. if we needed we would duplicate the logic.
+    print(f"Processed {subject_info['file']}")
 
 def main():
     for subject in SUBJECTS:
