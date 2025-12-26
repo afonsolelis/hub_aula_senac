@@ -7,13 +7,25 @@ COURSES = [
         'json': 'pages/logica/aulas.json',
         'html': 'pages/introducao-logica.html',
         'folder': 'logica',
-        'start_week': 6
+        'start_week': 6,
+        'inject_nav_cards': True,
+        'header_snippet': 'Cronograma de Aulas'
     },
     {
         'json': 'pages/qualidade/aulas.json',
         'html': 'pages/qualidade-software.html',
         'folder': 'qualidade',
-        'start_week': 6
+        'start_week': 6,
+        'inject_nav_cards': True,
+        'header_snippet': 'Cronograma de Aulas'
+    },
+    {
+        'json': 'pages/tcc/aulas.json',
+        'html': 'pages/tcc.html',
+        'folder': 'tcc',
+        'start_week': 6,
+        'inject_nav_cards': False,
+        'header_snippet': 'Cronograma de Entregas'
     }
 ]
 
@@ -26,6 +38,8 @@ def generate_cards_for_course(course):
     html_path = course['html']
     folder = course['folder']
     start_week = course['start_week']
+    inject_nav_cards = course.get('inject_nav_cards', True) # Default to True
+    header_snippet = course.get('header_snippet', 'Cronograma de Aulas')
 
     print(f"Processing {html_path}...")
 
@@ -57,17 +71,28 @@ def generate_cards_for_course(course):
         num = lesson['numero']
         title = lesson['titulo']
 
-        week_text = f"Semana {current_week:02d}"
-
-        if lesson.get('avaliacao', False) or 'Avaliação' in title or 'Prova' in title:
-            badge_class = "bg-danger text-white"
-            icon = "fas fa-exclamation-circle"
+        # Determine icon and badge based on title keywords
+        if lesson.get('avaliacao', False) or 'Avaliação' in title or 'Prova' in title or 'Entrega' in title or 'Banca' in title:
+             if 'Banca' in title or 'Final' in title:
+                 badge_class = "bg-success text-white"
+                 icon = "fas fa-flag-checkered"
+             else:
+                 badge_class = "bg-danger text-white"
+                 icon = "fas fa-exclamation-circle"
         else:
             badge_class = "bg-light text-dark"
             icon = "far fa-calendar-alt"
 
+        # Calculate Date (approximate based on start week)
+        # Week 6 = Feb 1 (Sat)
+        # Week 7 = Feb 8, etc.
+        # This logic is purely visual "Semana X" for now as per request "troque a data pela semana do ano"
+        # User said "igual fizemos nas outras aulas", which used "Semana 06", "Semana 07" badges.
+
+        week_text = f"Semana {current_week:02d}"
+
         # Clean title for filename (Strict accent removal)
-        state_title = remove_accents(title.lower()).replace(' ', '').replace(':', '').replace('(', '').replace(')', '').replace('.', '')
+        state_title = remove_accents(title.lower()).replace(' ', '').replace(':', '').replace('(', '').replace(')', '').replace('.', '').replace('-', '')
         filename = f"{folder}/{state_title}.html"
 
         card = f"""
@@ -90,93 +115,66 @@ def generate_cards_for_course(course):
     with open(html_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    # Anchor finding strategy (reused but robust)
-    start_idx = -1
-    end_idx = -1
-
-    # We look for "Cronograma de Aulas" H3 header, then the first <div class="row g-3"> AFTER it.
-    # OR we look for the info cards row if it exists.
-    # Logic had info cards "Entrega de Atividades".
-    # Quality doesn't have them yet!
-    # Implementation plan said: "Add Navigation Cards: Insert the 3 cards...".
-    # Current script only generates Lesson Cards.
-
-    # ISSUE: We need to ADD nav cards to quality too.
-    # IF Nav cards don't exist, we must inject them.
-    # IF they do exist, we must skip them.
-
-    # We can detect if they exist by looking for "Entrega de Atividades".
-
-    has_nav_cards = False
-    nav_cards_end_idx = -1
-
-    for i, line in enumerate(lines):
-        if "Entrega de Atividades" in line:
-            has_nav_cards = True
-            # Find end of this row...
-            # This is complex inside a loop.
-
-    # Simplified Injector:
-    # 1. Find "Cronograma de Aulas"
-    # 2. Check if next immediate things are Nav Cards.
-    # 3. If not, insert Nav Cards.
-    # 4. Then Replace Lesson Cards.
-
-    # Let's verify where Cronograma is.
+    # Locate 'Cronograma'
     cronograma_idx = -1
     for i, line in enumerate(lines):
-        if "Cronograma de Aulas" in line:
+        if header_snippet in line:
             cronograma_idx = i
             break
 
     if cronograma_idx == -1:
-        print(f"Could not find Cronograma header in {html_path}")
+        print(f"Could not find '{header_snippet}' header in {html_path}")
         return
 
-    # Prepare Nav Cards HTML
-    nav_cards_html = f"""
-          <!-- Project and Activity Cards -->
-          <div class="row g-3 mb-4">
-            <div class="col-md-4">
-              <a href="{folder}/projeto_descricao.html"
-                class="card h-100 border-0 shadow-sm text-decoration-none bg-primary text-white hover-scale">
-                <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
-                  <i class="fas fa-project-diagram fa-3x mb-3"></i>
-                  <h5 class="card-title fw-bold">Descrição do Projeto</h5>
-                  <p class="card-text small text-white-50">Detalhes e requisitos do projeto semestral.</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="https://forms.google.com/PLACEHOLDER" target="_blank"
-                class="card h-100 border-0 shadow-sm text-decoration-none bg-success text-white hover-scale">
-                <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
-                  <i class="fas fa-upload fa-3x mb-3"></i>
-                  <h5 class="card-title fw-bold">Entrega do Projeto</h5>
-                  <p class="card-text small text-white-50">Envie aqui o link do seu projeto final.</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="https://forms.google.com/PLACEHOLDER" target="_blank"
-                class="card h-100 border-0 shadow-sm text-decoration-none bg-info text-white hover-scale">
-                <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
-                  <i class="fas fa-tasks fa-3x mb-3"></i>
-                  <h5 class="card-title fw-bold">Entrega de Atividades</h5>
-                  <p class="card-text small text-white-50">Envio de exercícios semanais.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-    """
+    # Check/Inject Nav Cards
+    has_nav_cards = False
+    # Only check/inject if configured
+    if inject_nav_cards:
+        for i, line in enumerate(lines):
+            if "Entrega de Atividades" in line:
+                has_nav_cards = True
+                break
 
-    # If nav cards missing, insert them after header line (cronograma_idx)
-    # Be careful: lines[cronograma_idx] might be <h3>...</h3>
-    # Insert after.
+        # Prepare Nav Cards HTML (Standard)
+        nav_cards_html = f"""
+              <!-- Project and Activity Cards -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <a href="{folder}/projeto_descricao.html"
+                    class="card h-100 border-0 shadow-sm text-decoration-none bg-primary text-white hover-scale">
+                    <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
+                      <i class="fas fa-project-diagram fa-3x mb-3"></i>
+                      <h5 class="card-title fw-bold">Descrição do Projeto</h5>
+                      <p class="card-text small text-white-50">Detalhes e requisitos do projeto semestral.</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="https://forms.google.com/PLACEHOLDER" target="_blank"
+                    class="card h-100 border-0 shadow-sm text-decoration-none bg-success text-white hover-scale">
+                    <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
+                      <i class="fas fa-upload fa-3x mb-3"></i>
+                      <h5 class="card-title fw-bold">Entrega do Projeto</h5>
+                      <p class="card-text small text-white-50">Envie aqui o link do seu projeto final.</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="https://forms.google.com/PLACEHOLDER" target="_blank"
+                    class="card h-100 border-0 shadow-sm text-decoration-none bg-info text-white hover-scale">
+                    <div class="card-body text-center d-flex flex-column justify-content-center align-items-center p-4">
+                      <i class="fas fa-tasks fa-3x mb-3"></i>
+                      <h5 class="card-title fw-bold">Entrega de Atividades</h5>
+                      <p class="card-text small text-white-50">Envio de exercícios semanais.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+        """
 
-    if not has_nav_cards:
-        lines.insert(cronograma_idx + 1, nav_cards_html)
-        print("  Inserted Navigation Cards.")
+        if not has_nav_cards:
+            lines.insert(cronograma_idx + 1, nav_cards_html)
+            print("  Inserted Navigation Cards.")
         # Re-evaluate has_nav_cards for lesson replacement logic?
         # Lesson replacement logic needs to find the "row g-3" that follows the nav cards.
         # Now that we inserted them, the file structure in memory 'lines' has them.
