@@ -1,163 +1,1047 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semana 05 - Trabalho de Conclusão</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/slides.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 11 - TCC: Estudo de Viabilidade Técnica</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/slides.css">
+  <style>
+    .matrix-table {
+      font-size: 0.85rem;
+    }
+    .matrix-table th {
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+    }
+    .score-high {
+      background: #d4edda !important;
+      font-weight: bold;
+    }
+    .score-medium {
+      background: #fff3cd !important;
+    }
+    .score-low {
+      background: #f8d7da !important;
+    }
+  </style>
 </head>
+
 <body class="slide-body">
 
-    <div class="slide-container">
+  <div class="slide-container">
 
-        <!-- Back Button -->
-        <a href="../tcc.html" class="btn btn-outline-secondary position-absolute top-0 start-0 m-4 rounded-pill">
-            <i class="fas fa-arrow-left me-2"></i> Voltar
-        </a>
+    <!-- Back Button -->
+    <a href="../tcc.html" class="btn btn-outline-secondary position-absolute top-0 start-0 m-4 rounded-pill">
+      <i class="fas fa-arrow-left me-2"></i> Voltar
+    </a>
 
-        <!-- Slide 1: Cover -->
-        <div class="slide active" id="slide-1">
-            <div class="glass-cover text-center">
-                <img src="https://res.cloudinary.com/dyhjjms8y/image/upload/v1759512534/logo-SENAC_k3d68v.png"
-                     alt="Senac Logo" height="80" class="mb-4">
-                <h5 class="text-uppercase text-secondary tracking-wider mb-2 fw-bold">Trabalho de Conclusão</h5>
-                <h1 class="display-3 fw-bold mb-4 text-black">Semana 05</h1>
-                <hr class="border-secondary w-25 mx-auto my-4 opacity-100">
-                <h3 class="fw-normal text-dark">Professor Afonso</h3>
-                <span class="badge bg-danger mt-3 px-3 py-2 rounded-pill">2026.1</span>
-            </div>
-        </div>
-
-        <!-- Slide 2: Agenda -->
-        <div class="slide" id="slide-2">
-            <h1 class="display-4 fw-bold mb-4 text-dark">Agenda</h1>
-            <ul class="list-group list-group-flush fs-4 text-start bg-transparent">
-                
-                <li class="list-group-item bg-transparent text-dark border-bottom border-dark-subtle"><i class="fas fa-check text-success me-3"></i> Tópico 1</li>
-            
-            </ul>
-        </div>
-
-        <!-- Slide 3: Content 1 -->
-        <div class="slide" id="slide-3">
-            <div class="text-center slide-content">
-                <h2 class="display-5 fw-bold mb-4 text-dark">Conceitos Iniciais</h2>
-                <p class="lead text-dark mb-5">Uma visão geral sobre Estudo de Viabilidade Técnica..</p>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="p-4 border border-dark-subtle rounded-4 bg-white shadow-sm">
-                            <i class="fas fa-lightbulb fa-3x text-warning mb-3"></i>
-                            <h4 class="text-dark">Ideia</h4>
-                            <p class="text-secondary small">O conceito central explicado de forma simples.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border border-dark-subtle rounded-4 bg-white shadow-sm">
-                            <i class="fas fa-cogs fa-3x text-info mb-3"></i>
-                            <h4 class="text-dark">Mecanismo</h4>
-                            <p class="text-secondary small">Como funciona na prática e seus componentes.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border border-dark-subtle rounded-4 bg-white shadow-sm">
-                            <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
-                            <h4 class="text-dark">Resultado</h4>
-                            <p class="text-secondary small">Os benefícios e impactos esperados.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Content 2 -->
-        <div class="slide" id="slide-4">
-             <div class="text-center slide-content">
-                <h2 class="display-5 fw-bold mb-4 text-dark">Aprofundamento</h2>
-                <p class="fs-4 text-secondary">Detalhes técnicos importantes sobre o tema.</p>
-                <div class="card border-0 shadow-lg mt-5 mx-auto" style="max-width: 800px;">
-                    <div class="card-body p-5">
-                         <blockquote class="blockquote mb-0">
-                          <p class="text-dark">"A educação é a arma mais poderosa que você pode usar para mudar o mundo."</p>
-                          <footer class="blockquote-footer mt-2">Nelson Mandela</footer>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 5: Conclusion -->
-        <div class="slide" id="slide-5">
-             <div class="text-center slide-content">
-                <h1 class="display-3 fw-bold mb-4 text-dark">Dúvidas?</h1>
-                <p class="lead text-dark mb-5">Obrigado pela atenção!</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="#" class="btn btn-dark btn-lg rounded-pill px-5">Material Complementar</a>
-                    <a href="../tcc.html" class="btn btn-outline-dark btn-lg rounded-pill px-5">Voltar para Aulas</a>
-                </div>
-            </div>
-        </div>
-
+    <!-- Slide 1: Cover -->
+    <div class="slide active" id="slide-1">
+      <div class="glass-cover text-center">
+        <img src="https://res.cloudinary.com/dyhjjms8y/image/upload/v1759512534/logo-SENAC_k3d68v.png" alt="Senac Logo"
+          height="80" class="mb-4">
+        <h5 class="text-uppercase text-secondary tracking-wider mb-2 fw-bold">TCC1 - Ciência da Computação</h5>
+        <h1 class="display-3 fw-bold mb-4 text-black">Estudo de Viabilidade de Pesquisa</h1>
+        <hr class="border-secondary w-25 mx-auto my-4 opacity-100">
+        <h3 class="fw-normal text-dark">Análise de Factibilidade nos 4 Caminhos Metodológicos</h3>
+        <p class="text-muted mt-3 fs-5">DSR • Teórico/Matemático • Experimental • Survey</p>
+        <span class="badge bg-danger mt-3 px-3 py-2 rounded-pill">Semana 11 - 2026.1</span>
+      </div>
     </div>
 
-    <!-- Footer Navigation -->
-    <footer class="slide-footer">
-        <div class="slide-controls">
-            <button id="prevBtn" onclick="prevSlide()" disabled><i class="fas fa-chevron-left"></i></button>
-            <button id="nextBtn" onclick="nextSlide()" class="ms-2"><i class="fas fa-chevron-right"></i></button>
+    <!-- Slide 2: Agenda -->
+    <div class="slide" id="slide-2">
+      <h1 class="display-4 fw-bold mb-4 text-dark">Agenda da Aula</h1>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card border-primary h-100">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0"><i class="fas fa-chalkboard-teacher me-2"></i>Parte 1: Teoria</h5>
+            </div>
+            <div class="card-body">
+              <ul class="mb-0">
+                <li>Fundamentos: O que é Viabilidade de Pesquisa?</li>
+                <li><strong>Caminho 1:</strong> Viabilidade para DSR (Design Science)</li>
+                <li><strong>Caminho 2:</strong> Viabilidade para Pesquisa Teórica/Matemática</li>
+                <li><strong>Caminho 3:</strong> Viabilidade para Pesquisa Experimental</li>
+                <li><strong>Caminho 4:</strong> Viabilidade para Survey/Revisão Sistemática</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-success h-100">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0"><i class="fas fa-laptop-code me-2"></i>Parte 2: Desafio Prático</h5>
+            </div>
+            <div class="card-body">
+              <ul class="mb-0">
+                <li>Avaliar a viabilidade do <strong>SEU TCC</strong></li>
+                <li>Usar os critérios do caminho metodológico escolhido</li>
+                <li>Preencher planilha de avaliação</li>
+                <li>Apresentar pontuação e principais riscos</li>
+              </ul>
+              <div class="alert alert-warning mb-0 mt-3">
+                <strong>Entrega:</strong> Estudo de viabilidade do seu projeto!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Fundamentos -->
+    <div class="slide" id="slide-3">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-4 text-dark text-center">Fundamentos: O Que É Viabilidade de Pesquisa?</h2>
+
+        <div class="alert alert-primary border-0 shadow mb-4">
+          <h4 class="fw-bold mb-3"><i class="fas fa-book-open me-2"></i>Definição Formal</h4>
+          <p class="mb-0">Estudo de Viabilidade de Pesquisa é uma <strong>análise sistemática e quantitativa</strong> que determina se um projeto de TCC pode ser executado com sucesso, considerando os <strong>recursos disponíveis, conhecimento necessário, tempo disponível, infraestrutura</strong> e <strong>riscos inerentes ao caminho metodológico escolhido</strong>.</p>
         </div>
 
-        <div class="text-center text-muted small d-none d-md-block">
-            Trabalho de Conclusão - Semana 05
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card border-success shadow-lg h-100">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-check-double me-2"></i>Por Que Fazer Estudo de Viabilidade?</h5>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li><strong>Evitar Frustrações:</strong> Descobrir limitações no início, não no TCC2</li>
+                  <li><strong>Economia de Tempo:</strong> Redirecionar o projeto cedo se necessário</li>
+                  <li><strong>Tomada de Decisão:</strong> Base objetiva para escolher caminho metodológico</li>
+                  <li><strong>Justificativa Acadêmica:</strong> Demonstra planejamento rigoroso na monografia</li>
+                  <li><strong>Credibilidade:</strong> Mostra que você pensou nos desafios</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-danger shadow-lg h-100">
+              <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Consequências de Não Fazer</h5>
+              </div>
+              <div class="card-body">
+                <ul class="mb-0">
+                  <li class="mb-2"><strong>DSR:</strong> Descobrir que a API custa $500/mês ou hardware não suporta ML</li>
+                  <li class="mb-2"><strong>Teórico:</strong> Perceber que a matemática está muito além do seu nível</li>
+                  <li class="mb-2"><strong>Experimental:</strong> Não ter acesso ao laboratório ou equipamentos necessários</li>
+                  <li class="mb-2"><strong>Survey:</strong> Descobrir que não tem acesso às bases de dados necessárias</li>
+                  <li class="mb-0"><strong>Todos:</strong> Reprovar na banca por não entregar o prometido</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Caminho 1 - DSR (Design Science Research) -->
+    <div class="slide" id="slide-4">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-3 text-dark text-center"><i class="fas fa-code me-2"></i>Caminho 1: Viabilidade para DSR</h2>
+        <p class="text-center text-muted mb-4">Design Science Research - Criar POC, Protótipo ou MVP</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card border-primary shadow h-100">
+              <div class="card-header bg-primary text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-microchip me-2"></i>1. Viabilidade Técnica (30 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Tecnologia existe?</strong> Madura (10) / Beta (5) / Não existe (0)</li>
+                  <li><strong>Conhecimento:</strong> Domínio (10) / Parcial (5) / Zero (0)</li>
+                  <li><strong>Infraestrutura:</strong> Disponível (10) / Parcial (5) / Nada (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-success shadow h-100">
+              <div class="card-header bg-success text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-dollar-sign me-2"></i>2. Viabilidade Econômica (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Custo total:</strong> R$ 0 (20) / R$ 1-500 (15) / R$ 501-2k (10) / R$ 2k-5k (5) / >R$ 5k (0)</li>
+                  <li class="text-muted"><small>Incluir: APIs, cloud, licenças, hardware GPU, domínio</small></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-warning shadow h-100">
+              <div class="card-header bg-warning text-dark py-2">
+                <h6 class="mb-0"><i class="fas fa-clock me-2"></i>3. Viabilidade Temporal (30 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Aprendizado:</strong> Sabe tudo (10) / 1-2 sem (5) / >1 mês (0)</li>
+                  <li><strong>Implementação:</strong> <2 meses (15) / 2-4m (10) / 4-6m (5) / >6m (0)</li>
+                  <li><strong>Buffer:</strong> 30%+ folga (5) / <30% (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-info shadow h-100">
+              <div class="card-header bg-info text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-users me-2"></i>4. Viabilidade Operacional (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Usabilidade:</strong> Intuitivo (10) / Tutorial (5) / Complexo (0)</li>
+                  <li><strong>Integração:</strong> Standalone (10) / Simples (5) / Complexa (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <a href="../../index.html">
-            <img src="https://res.cloudinary.com/dyhjjms8y/image/upload/v1759512534/logo-SENAC_k3d68v.png"
-                 alt="Senac" height="30" class="opacity-75">
-        </a>
-    </footer>
+        <div class="alert alert-dark mt-3 mb-0 text-center">
+          <h6 class="mb-1"><strong>Total: 100 pontos</strong></h6>
+          <p class="mb-0 small">
+            <span class="badge bg-success">80-100: VIÁVEL</span>
+            <span class="badge bg-warning text-dark ms-2">60-79: ATENÇÃO</span>
+            <span class="badge bg-danger ms-2">< 60: INVIÁVEL</span>
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        let currentSlide = 1;
-        const totalSlides = 5;
+    <!-- Slide 5: Caminho 2 - Pesquisa Teórica/Matemática -->
+    <div class="slide" id="slide-5">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-3 text-dark text-center"><i class="fas fa-square-root-alt me-2"></i>Caminho 2: Viabilidade para Pesquisa Teórica/Matemática</h2>
+        <p class="text-center text-muted mb-4">Desenvolvimento de provas, teoremas, formalizações matemáticas</p>
 
-        function showSlide(n) {
-            // Remove active class from all slides
-            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card border-primary shadow h-100">
+              <div class="card-header bg-primary text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-brain me-2"></i>1. Viabilidade Matemática (35 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Nível matemático:</strong> Graduação (15) / Mestrado (10) / Doutorado (0)</li>
+                  <li><strong>Seu background:</strong> Domina tópico (10) / Estudou parcial (5) / Nunca viu (0)</li>
+                  <li><strong>Complexidade provas:</strong> Direta (10) / Moderada (5) / Alta (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-            // Show current slide
-            document.getElementById('slide-' + n).classList.add('active');
+          <div class="col-md-6">
+            <div class="card border-success shadow h-100">
+              <div class="card-header bg-success text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-book me-2"></i>2. Viabilidade Bibliográfica (25 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Literatura disponível:</strong> Abundante (15) / Moderada (10) / Escassa (0)</li>
+                  <li><strong>Acesso material:</strong> Aberto (10) / Parcial paywall (5) / Tudo pago (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-            // Update button states
-            document.getElementById('prevBtn').disabled = (n === 1);
-            document.getElementById('nextBtn').disabled = (n === totalSlides);
+          <div class="col-md-6">
+            <div class="card border-warning shadow h-100">
+              <div class="card-header bg-warning text-dark py-2">
+                <h6 class="mb-0"><i class="fas fa-lightbulb me-2"></i>3. Viabilidade de Contribuição (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Gap identificado:</strong> Claro (10) / Possível (5) / Inexistente (0)</li>
+                  <li><strong>Originalidade:</strong> Nova abordagem (10) / Extensão (5) / Revisão (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-info shadow h-100">
+              <div class="card-header bg-info text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-hourglass-half me-2"></i>4. Viabilidade Temporal (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Aprendizado:</strong> <1 mês (10) / 1-3m (5) / >3m (0)</li>
+                  <li><strong>Desenvolvimento:</strong> <4 meses (10) / 4-6m (5) / >6m (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-dark mt-3 mb-0 text-center">
+          <h6 class="mb-1"><strong>Total: 100 pontos</strong></h6>
+          <p class="mb-0 small">
+            <span class="badge bg-success">80-100: VIÁVEL</span>
+            <span class="badge bg-warning text-dark ms-2">60-79: ATENÇÃO</span>
+            <span class="badge bg-danger ms-2">< 60: INVIÁVEL</span>
+          </p>
+        </div>
+
+        <div class="alert alert-warning mt-3 mb-0">
+          <small><strong><i class="fas fa-exclamation-triangle me-2"></i>Exemplo inviável:</strong> "Provar P≠NP" - problema do milênio, nível doutorado+, gap inexistente (já muito estudado)</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Caminho 3 - Pesquisa Experimental -->
+    <div class="slide" id="slide-6">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-3 text-dark text-center"><i class="fas fa-flask me-2"></i>Caminho 3: Viabilidade para Pesquisa Experimental</h2>
+        <p class="text-center text-muted mb-4">Condução de experimentos, coleta de dados, análise estatística</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card border-primary shadow h-100">
+              <div class="card-header bg-primary text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-microscope me-2"></i>1. Viabilidade de Infraestrutura (30 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Acesso laboratório:</strong> Pleno (15) / Parcial (10) / Nenhum (0)</li>
+                  <li><strong>Equipamentos:</strong> Disponíveis (10) / Comprar barato (5) / Caros/indisponíveis (0)</li>
+                  <li><strong>Software necessário:</strong> Grátis (5) / Licença estudante (3) / Pago (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-success shadow h-100">
+              <div class="card-header bg-success text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-database me-2"></i>2. Viabilidade de Dados (25 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Coleta de dados:</strong> Fácil (15) / Moderada (10) / Difícil (0)</li>
+                  <li><strong>Tamanho amostra:</strong> Suficiente (10) / Limítrofe (5) / Insuficiente (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-warning shadow h-100">
+              <div class="card-header bg-warning text-dark py-2">
+                <h6 class="mb-0"><i class="fas fa-shield-alt me-2"></i>3. Viabilidade Ética (25 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Comitê Ética (CEP):</strong> Não precisa (15) / Precisa, simples (10) / Precisa, complexo (0)</li>
+                  <li><strong>LGPD/Privacidade:</strong> Sem dados pessoais (10) / Anonimizado (5) / Sensível (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-info shadow h-100">
+              <div class="card-header bg-info text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-hourglass-half me-2"></i>4. Viabilidade Temporal (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Setup:</strong> <1 mês (5) / 1-2m (3) / >2m (0)</li>
+                  <li><strong>Experimentos:</strong> <2 meses (10) / 2-4m (5) / >4m (0)</li>
+                  <li><strong>Análise:</strong> <1 mês (5) / 1-2m (3) / >2m (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-dark mt-3 mb-0 text-center">
+          <h6 class="mb-1"><strong>Total: 100 pontos</strong></h6>
+          <p class="mb-0 small">
+            <span class="badge bg-success">80-100: VIÁVEL</span>
+            <span class="badge bg-warning text-dark ms-2">60-79: ATENÇÃO</span>
+            <span class="badge bg-danger ms-2">< 60: INVIÁVEL</span>
+          </p>
+        </div>
+
+        <div class="alert alert-danger mt-3 mb-0">
+          <small><strong><i class="fas fa-exclamation-triangle me-2"></i>Exemplo inviável:</strong> "Experimento com ressonância magnética" - equipamento caríssimo, CEP complexo, sem acesso</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Caminho 4 - Survey/Revisão Sistemática -->
+    <div class="slide" id="slide-7">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-3 text-dark text-center"><i class="fas fa-search me-2"></i>Caminho 4: Viabilidade para Survey/Revisão Sistemática</h2>
+        <p class="text-center text-muted mb-4">Mapeamento sistemático, revisão bibliográfica estruturada (PRISMA)</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card border-primary shadow h-100">
+              <div class="card-header bg-primary text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-database me-2"></i>1. Viabilidade de Acesso (30 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Bases de dados:</strong> Acesso completo IEEE/ACM/Scopus (20) / Parcial (10) / Só Google Scholar (0)</li>
+                  <li><strong>VPN institucional:</strong> Funciona (10) / Instável (5) / Sem acesso (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-success shadow h-100">
+              <div class="card-header bg-success text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-list-ol me-2"></i>2. Viabilidade de Escopo (25 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Nº papers esperado:</strong> 50-300 (15) / 300-800 (10) / >800 ou <50 (0)</li>
+                  <li><strong>Tema definido:</strong> Questão clara (10) / Vaga (5) / Indefinida (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-warning shadow h-100">
+              <div class="card-header bg-warning text-dark py-2">
+                <h6 class="mb-0"><i class="fas fa-tools me-2"></i>3. Viabilidade de Ferramentas (20 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Gerenciador ref:</strong> Zotero/Mendeley (10) / Manual (0)</li>
+                  <li><strong>Screening:</strong> Rayyan/Parsifal (10) / Planilha (5) / Manual (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-info shadow h-100">
+              <div class="card-header bg-info text-white py-2">
+                <h6 class="mb-0"><i class="fas fa-hourglass-half me-2"></i>4. Viabilidade Temporal (25 pts)</h6>
+              </div>
+              <div class="card-body p-3">
+                <ul class="small mb-0">
+                  <li><strong>Busca:</strong> <2 sem (5) / 2-4sem (3) / >1m (0)</li>
+                  <li><strong>Screening:</strong> <1 mês (10) / 1-2m (5) / >2m (0)</li>
+                  <li><strong>Extração/Análise:</strong> <2 meses (10) / 2-4m (5) / >4m (0)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-dark mt-3 mb-0 text-center">
+          <h6 class="mb-1"><strong>Total: 100 pontos</strong></h6>
+          <p class="mb-0 small">
+            <span class="badge bg-success">80-100: VIÁVEL</span>
+            <span class="badge bg-warning text-dark ms-2">60-79: ATENÇÃO</span>
+            <span class="badge bg-danger ms-2">< 60: INVIÁVEL</span>
+          </p>
+        </div>
+
+        <div class="alert alert-info mt-3 mb-0">
+          <small><strong><i class="fas fa-info-circle me-2"></i>Dica:</strong> Faça busca piloto antes! 5.000+ papers = escopo muito amplo, <30 papers = escopo muito restrito</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8: Como Aplicar a Avaliação -->
+    <div class="slide" id="slide-8">
+      <div class="slide-content">
+        <h2 class="display-4 fw-bold mb-4 text-dark text-center">Como Aplicar a Avaliação de Viabilidade</h2>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card border-primary shadow-lg h-100">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-route me-2"></i>Passo a Passo Geral</h5>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li class="mb-2"><strong>Identificar caminho metodológico</strong> do seu TCC (DSR, Teórico, Experimental, Survey)</li>
+                  <li class="mb-2"><strong>Usar os critérios específicos</strong> do caminho escolhido (slides 4-7)</li>
+                  <li class="mb-2"><strong>Pontuar honestamente</strong> cada dimensão (sem otimismo excessivo!)</li>
+                  <li class="mb-2"><strong>Calcular total</strong> e analisar resultado</li>
+                  <li class="mb-2"><strong>Identificar riscos principais</strong> e planos de mitigação</li>
+                  <li class="mb-0"><strong>Documentar no TCC</strong> (seção Viabilidade da Pesquisa)</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-success shadow-lg h-100">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Erros Comuns a Evitar</h5>
+              </div>
+              <div class="card-body">
+                <ul class="mb-0">
+                  <li class="mb-2"><strong>Otimismo excessivo:</strong> "Vou aprender Haskell em 1 semana!" <span class="badge bg-danger">NÃO</span></li>
+                  <li class="mb-2"><strong>Ignorar custos ocultos:</strong> APIs gratuitas têm limites de requisições</li>
+                  <li class="mb-2"><strong>Subestimar complexidade matemática:</strong> Cálculo 4 é diferente de Álgebra Linear Avançada</li>
+                  <li class="mb-2"><strong>Esquecer aprovação ética:</strong> CEP pode demorar 3+ meses</li>
+                  <li class="mb-0"><strong>Não ter plano B:</strong> E se a API principal cair? E se não conseguir acesso ao lab?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mt-4 mb-0">
+          <h5 class="fw-bold mb-3"><i class="fas fa-lightbulb me-2"></i>Interpretando os Resultados</h5>
+          <div class="row g-3 text-center">
+            <div class="col-md-4">
+              <div class="bg-success text-white rounded p-3">
+                <h4 class="fw-bold mb-2">80-100 pts</h4>
+                <p class="mb-0 small"><strong>VIÁVEL</strong><br>Pode prosseguir com confiança</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-warning text-dark rounded p-3">
+                <h4 class="fw-bold mb-2">60-79 pts</h4>
+                <p class="mb-0 small"><strong>ATENÇÃO</strong><br>Ajustes necessários antes de continuar</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-danger text-white rounded p-3">
+                <h4 class="fw-bold mb-2">< 60 pts</h4>
+                <p class="mb-0 small"><strong>INVIÁVEL</strong><br>Repensar escopo ou mudar de caminho</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: DESAFIO PRÁTICO -->
+    <div class="slide" id="slide-9">
+      <div class="slide-content text-center">
+        <h1 class="display-4 fw-bold mb-4 text-dark">🎯 DESAFIO PRÁTICO</h1>
+        <div class="alert alert-danger border-0 shadow-lg mb-4 mx-auto" style="max-width: 900px;">
+          <h3 class="mb-3"><i class="fas fa-user-graduate me-2"></i>Avalie SEU Projeto de TCC</h3>
+          <p class="lead mb-0">Use os critérios do caminho metodológico que você escolheu</p>
+        </div>
+
+        <div class="row g-4 text-start">
+          <div class="col-md-6">
+            <div class="card border-primary shadow-lg h-100">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-code me-2"></i>DSR (Design Science Research)</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold">O que avaliar:</h6>
+                <ul class="small">
+                  <li>Tecnologias necessárias e seu domínio</li>
+                  <li>Custos de APIs, cloud, hardware</li>
+                  <li>Tempo de aprendizado + implementação</li>
+                  <li>Complexidade de integração</li>
+                </ul>
+                <h6 class="fw-bold mt-3">Perguntas-chave:</h6>
+                <ul class="small mb-0">
+                  <li>A stack tecnológica é madura e estável?</li>
+                  <li>Você domina as tecnologias ou precisará aprender?</li>
+                  <li>O orçamento disponível cobre todos os custos?</li>
+                  <li>Há tempo suficiente para implementar + testar?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-success shadow-lg h-100">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-square-root-alt me-2"></i>Pesquisa Teórica/Matemática</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold">O que avaliar:</h6>
+                <ul class="small">
+                  <li>Nível matemático exigido vs. seu background</li>
+                  <li>Literatura disponível e acessível</li>
+                  <li>Existência de gap de pesquisa claro</li>
+                  <li>Tempo para aprender conceitos + desenvolver provas</li>
+                </ul>
+                <h6 class="fw-bold mt-3">Perguntas-chave:</h6>
+                <ul class="small mb-0">
+                  <li>O nível matemático é de graduação ou pós?</li>
+                  <li>Você tem a base matemática necessária?</li>
+                  <li>Há papers suficientes acessíveis?</li>
+                  <li>O gap de pesquisa está claro e é factível?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-warning shadow-lg h-100">
+              <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0"><i class="fas fa-flask me-2"></i>Pesquisa Experimental</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold">O que avaliar:</h6>
+                <ul class="small">
+                  <li>Acesso a laboratório e equipamentos</li>
+                  <li>Custo de materiais/equipamentos</li>
+                  <li>Necessidade de aprovação CEP/ética</li>
+                  <li>Tempo para setup + execução + análise</li>
+                </ul>
+                <h6 class="fw-bold mt-3">Perguntas-chave:</h6>
+                <ul class="small mb-0">
+                  <li>Você tem acesso ao lab/equipamentos necessários?</li>
+                  <li>Precisa comprar algo? Quanto custa?</li>
+                  <li>Envolve seres humanos? Precisa CEP?</li>
+                  <li>A amostra será suficientemente grande?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-info shadow-lg h-100">
+              <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-search me-2"></i>Survey/Revisão Sistemática</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold">O que avaliar:</h6>
+                <ul class="small">
+                  <li>Acesso a bases de dados (IEEE, ACM, Scopus)</li>
+                  <li>Escopo: nº esperado de papers (50-800)</li>
+                  <li>Ferramentas disponíveis (Zotero, Rayyan)</li>
+                  <li>Tempo para busca + screening + análise</li>
+                </ul>
+                <h6 class="fw-bold mt-3">Perguntas-chave:</h6>
+                <ul class="small mb-0">
+                  <li>Você tem acesso às bases principais?</li>
+                  <li>A busca piloto retorna 50-800 papers?</li>
+                  <li>A questão de pesquisa está bem definida?</li>
+                  <li>Há tempo para screening manual de centenas de papers?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-primary mt-4 mb-0 text-center">
+          <h5 class="fw-bold mb-2"><i class="fas fa-info-circle me-2"></i>Importante</h5>
+          <p class="mb-0">Use os critérios específicos do slide 4, 5, 6 ou 7 dependendo do seu caminho metodológico</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: DESAFIO PRÁTICO - Parte 2 (Instruções) -->
+    <div class="slide" id="slide-10">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-4 text-dark text-center">📋 Instruções do Desafio</h2>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card border-danger shadow-lg h-100">
+              <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>O Que Entregar</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold mb-3">1. Documento Escrito com:</h6>
+                <ul class="mb-3">
+                  <li><strong>Título e resumo</strong> do seu projeto de TCC</li>
+                  <li><strong>Caminho metodológico</strong> escolhido (DSR/Teórico/Experimental/Survey)</li>
+                  <li><strong>Pontuação das dimensões:</strong> Avaliação usando os critérios específicos do seu caminho</li>
+                  <li><strong>Principais riscos:</strong> Mínimo 3-5 riscos identificados</li>
+                  <li><strong>Planos de mitigação:</strong> Como reduzir cada risco</li>
+                  <li><strong>Veredicto Final:</strong> VIÁVEL / ATENÇÃO / INVIÁVEL + justificativa</li>
+                </ul>
+
+                <h6 class="fw-bold mb-2">2. Apresentação Oral:</h6>
+                <ul class="mb-0">
+                  <li>Pontuação total obtida</li>
+                  <li>Principal risco identificado e mitigação</li>
+                  <li>Decisão: segue com o projeto ou precisa ajustar?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-primary shadow-lg h-100">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-clipboard-list me-2"></i>Como Proceder</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="fw-bold mb-3">Passo a passo:</h6>
+
+                <div class="alert alert-info mb-3">
+                  <strong><i class="fas fa-user me-2"></i>Trabalho Individual:</strong>
+                  <p class="small mb-0">Cada aluno avalia SEU PRÓPRIO projeto de TCC usando os critérios do caminho metodológico escolhido</p>
+                </div>
+
+                <div class="alert alert-light mb-3">
+                  <strong>Etapa 1: Identificação</strong>
+                  <ul class="small mb-0">
+                    <li>Qual caminho metodológico você escolheu?</li>
+                    <li>Volte ao slide correspondente (4, 5, 6 ou 7)</li>
+                    <li>Leia todos os critérios de avaliação</li>
+                  </ul>
+                </div>
+
+                <div class="alert alert-light mb-3">
+                  <strong>Etapa 2: Avaliação Honesta</strong>
+                  <ul class="small mb-0">
+                    <li>Pontue cada dimensão SEM otimismo excessivo</li>
+                    <li>Liste os recursos que você TEM vs. que você PRECISA</li>
+                    <li>Identifique os principais riscos do seu projeto</li>
+                  </ul>
+                </div>
+
+                <div class="alert alert-light mb-0">
+                  <strong>Etapa 3: Plano de Ação</strong>
+                  <ul class="small mb-0">
+                    <li>Se pontuação < 60: precisa repensar escopo</li>
+                    <li>Se pontuação 60-79: liste ajustes necessários</li>
+                    <li>Se pontuação 80-100: defina mitigações para riscos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success mt-3 mb-0">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h5 class="fw-bold mb-2"><i class="fas fa-download me-2"></i>Material Necessário</h5>
+              <p class="mb-0">Template da planilha será compartilhado via Google Drive (acesso compartilhado para edição)</p>
+            </div>
+            <div class="col-md-4 text-end">
+              <button class="btn btn-success btn-lg">
+                <i class="fas fa-file-excel me-2"></i>Abrir Template
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 11: Critérios de Avaliação do Desafio -->
+    <div class="slide" id="slide-11">
+      <div class="slide-content">
+        <h2 class="display-5 fw-bold mb-4 text-dark text-center">Critérios de Avaliação do Desafio</h2>
+        <p class="text-center text-muted mb-4">Como sua análise será avaliada</p>
+
+        <div class="row g-4">
+          <div class="col-md-12">
+            <div class="card shadow-lg border-0">
+              <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Critério</th>
+                      <th class="text-center">Peso</th>
+                      <th>O Que Avaliar</th>
+                      <th class="text-center">Pontos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>1. Completude da Análise</strong></td>
+                      <td class="text-center"><span class="badge bg-primary">30%</span></td>
+                      <td>
+                        <ul class="small mb-0">
+                          <li>Todas as 4 dimensões foram pontuadas?</li>
+                          <li>Pelo menos 5 riscos identificados?</li>
+                          <li>Matriz de Decisão preenchida?</li>
+                        </ul>
+                      </td>
+                      <td class="text-center">0-30</td>
+                    </tr>
+                    <tr>
+                      <td><strong>2. Profundidade Técnica</strong></td>
+                      <td class="text-center"><span class="badge bg-primary">25%</span></td>
+                      <td>
+                        <ul class="small mb-0">
+                          <li>Tecnologias específicas foram citadas? (não "um framework", mas "React 18")</li>
+                          <li>Custos foram pesquisados? (valores reais, não "barato")</li>
+                          <li>Cronograma detalhado? (não "6 meses", mas "2 meses aprendizado + 3 meses dev + 1 mês testes")</li>
+                        </ul>
+                      </td>
+                      <td class="text-center">0-25</td>
+                    </tr>
+                    <tr>
+                      <td><strong>3. Realismo da Avaliação</strong></td>
+                      <td class="text-center"><span class="badge bg-primary">25%</span></td>
+                      <td>
+                        <ul class="small mb-0">
+                          <li>Pontuações condizem com a realidade? (não dar 10/10 em tudo)</li>
+                          <li>Riscos são plausíveis? (não "meteorito cair no servidor")</li>
+                          <li>Mitigações são factíveis?</li>
+                        </ul>
+                      </td>
+                      <td class="text-center">0-25</td>
+                    </tr>
+                    <tr>
+                      <td><strong>4. Qualidade da Apresentação</strong></td>
+                      <td class="text-center"><span class="badge bg-primary">20%</span></td>
+                      <td>
+                        <ul class="small mb-0">
+                          <li>Explicou de forma clara e objetiva?</li>
+                          <li>Defendeu as escolhas tecnológicas?</li>
+                          <li>Respondeu perguntas do professor?</li>
+                        </ul>
+                      </td>
+                      <td class="text-center">0-20</td>
+                    </tr>
+                    <tr class="table-dark fw-bold">
+                      <td colspan="3">TOTAL</td>
+                      <td class="text-center fs-5">100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+          <div class="col-md-4">
+            <div class="alert alert-success mb-0">
+              <h6 class="fw-bold"><i class="fas fa-trophy me-2"></i>Excelente (80-100)</h6>
+              <p class="small mb-0">Análise completa, realista e bem justificada. Demonstra domínio da metodologia.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="alert alert-warning mb-0">
+              <h6 class="fw-bold"><i class="fas fa-check-circle me-2"></i>Bom (60-79)</h6>
+              <p class="small mb-0">Análise adequada mas com alguns gaps. Precisa de mais profundidade técnica.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="alert alert-danger mb-0">
+              <h6 class="fw-bold"><i class="fas fa-times-circle me-2"></i>Insuficiente (< 60)</h6>
+              <p class="small mb-0">Análise superficial ou incompleta. Não seguiu a metodologia proposta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12: Momento de Trabalho -->
+    <div class="slide" id="slide-12">
+      <div class="text-center slide-content">
+        <h1 class="display-1 fw-bold mb-5 text-primary">⏱️</h1>
+        <h2 class="display-4 fw-bold text-dark mb-5">TRABALHO EM GRUPO</h2>
+
+        <div class="row g-4 justify-content-center mb-5">
+          <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+              <div class="card-body p-5">
+                <h3 class="mb-4">Checklist de Progresso:</h3>
+                <div class="list-group text-start">
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Cenário escolhido e lido por todos</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Stack tecnológica definida (frontend, backend, banco, deploy)</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Matriz de Decisão preenchida (pelo menos 1)</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Pontuação das 4 dimensões calculada</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>5 riscos identificados com P×I</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Veredicto final escrito</strong>
+                  </div>
+                  <div class="list-group-item d-flex align-items-center py-3 bg-warning">
+                    <input class="form-check-input me-3" type="checkbox" style="width: 25px; height: 25px;">
+                    <strong>Apresentação preparada</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-primary mx-auto" style="max-width: 600px;">
+          <h4 class="fw-bold mb-3"><i class="fas fa-stopwatch me-2"></i>Cronômetro</h4>
+          <div class="display-3 fw-bold text-primary" id="timer">35:00</div>
+          <button class="btn btn-success btn-lg mt-3" onclick="startTimer()">
+            <i class="fas fa-play me-2"></i>Iniciar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 13: Entrega e Próximos Passos -->
+    <div class="slide" id="slide-13">
+      <div class="text-center slide-content">
+        <h1 class="display-3 fw-bold mb-4 text-dark">Entrega e Próximos Passos</h1>
+
+        <div class="row g-4 justify-content-center mb-5">
+          <div class="col-md-10">
+            <div class="card border-danger shadow-lg">
+              <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="fas fa-file-upload me-2"></i>Entrega da Semana</h4>
+              </div>
+              <div class="card-body text-start p-4">
+                <h5 class="fw-bold mb-3">Documento: Estudo de Viabilidade Técnica do SEU TCC (não do desafio)</h5>
+                <p class="mb-3">Entregar PDF (3-5 páginas) contendo:</p>
+                <ol>
+                  <li><strong>Resumo do Projeto:</strong> Título, objetivo, principais requisitos</li>
+                  <li><strong>Stack Tecnológica Proposta:</strong> Tabela com camada + tecnologia + justificativa</li>
+                  <li><strong>Avaliação Quantitativa:</strong> Pontuação das 4 dimensões (mostrar cálculos)</li>
+                  <li><strong>Matriz de Decisão:</strong> Pelo menos 1 comparação de alternativas tecnológicas</li>
+                  <li><strong>Análise de Riscos:</strong> Mínimo 5 riscos com P×I e mitigações</li>
+                  <li><strong>Conclusão:</strong> Veredicto final (Viável/Atenção/Inviável) + recomendações</li>
+                </ol>
+                <hr>
+                <div class="alert alert-warning mb-0">
+                  <p class="mb-0"><i class="fas fa-clock me-2"></i><strong>Prazo:</strong> Até domingo 23:59 (será adicionado à sua proposta de projeto)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Próxima Aula (Semana 12)</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group text-start">
+                  <li class="list-group-item">
+                    <i class="fas fa-drafting-compass text-primary me-3"></i>
+                    <strong>Prototipagem de Baixa Fidelidade</strong> (Wireframes e Mockups)
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-paint-brush text-success me-3"></i>
+                    <strong>Ferramentas:</strong> Figma, Balsamiq, ou papel e caneta
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-users text-warning me-3"></i>
+                    <strong>Validação com usuários</strong> reais (testes de usabilidade)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success border-0 shadow mt-5 mx-auto" style="max-width: 700px;">
+          <h4 class="mb-3"><i class="fas fa-quote-left me-2"></i>Reflexão Final</h4>
+          <p class="lead mb-0">"Falhar no planejamento é planejar para falhar. Um EVT bem feito pode salvar seu TCC."</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Navigation -->
+  <footer class="slide-footer">
+    <div class="slide-controls">
+      <button id="prevBtn" onclick="prevSlide()" disabled><i class="fas fa-chevron-left"></i></button>
+      <button id="nextBtn" onclick="nextSlide()" class="ms-2"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="text-center text-muted small d-none d-md-block">
+      TCC - Estudo de Viabilidade de Pesquisa (Semana 11)
+    </div>
+
+    <a href="../../index.html">
+      <img src="https://res.cloudinary.com/dyhjjms8y/image/upload/v1759512534/logo-SENAC_k3d68v.png" alt="Senac"
+        height="30" class="opacity-75">
+    </a>
+  </footer>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 13;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.getElementById('slide-' + n).classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalSlides);
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === "ArrowRight") nextSlide();
+      if (event.key === "ArrowLeft") prevSlide();
+    });
+
+    // Timer para o desafio
+    let timerInterval;
+    let timeLeft = 35 * 60; // 35 minutos em segundos
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 35 * 60;
+
+      timerInterval = setInterval(() => {
+        timeLeft--;
+
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        document.getElementById('timer').textContent =
+          `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          document.getElementById('timer').textContent = 'TEMPO ESGOTADO!';
+          document.getElementById('timer').classList.add('text-danger');
+        } else if (timeLeft <= 5 * 60) {
+          document.getElementById('timer').classList.add('text-danger');
+        } else if (timeLeft <= 10 * 60) {
+          document.getElementById('timer').classList.add('text-warning');
         }
+      }, 1000);
+    }
+  </script>
 
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                showSlide(currentSlide);
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                showSlide(currentSlide);
-            }
-        }
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "ArrowRight") nextSlide();
-            if (event.key === "ArrowLeft") prevSlide();
-        });
-    </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
