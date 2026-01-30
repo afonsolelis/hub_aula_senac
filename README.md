@@ -31,7 +31,7 @@ hub_aula_senac/
     ├── qualidade-software.html   # Disciplina: Qualidade de Software
     ├── introducao-logica.html    # Disciplina: Introdução à Lógica
     ├── tcc.html                  # Disciplina: TCC
-    ├── qualidade/                # Slides gerados (16 aulas)
+    ├── qualidade/                # Slides gerados (14 aulas no cronograma)
     ├── logica/                   # Slides gerados (16 aulas)
     └── tcc/                      # Slides gerados (16 semanas)
 ```
@@ -39,8 +39,8 @@ hub_aula_senac/
 ## 🎓 Disciplinas Disponíveis
 
 ### 1. Qualidade de Software (TADS)
-- **16 aulas** cobrindo desde fundamentos até CI/CD
-- Tópicos: Testes automatizados, TDD, Selenium, JMeter
+- **14 aulas** cobrindo desde fundamentos até práticas atuais de QA
+- Tópicos: GitHub Projects/Issues, GitHub Actions, testes manuais vs automatizados, TDD, BDD (Gherkin), VCR e JMeter
 
 ### 2. Introdução à Lógica (Redes de Computadores)
 - **16 aulas** de algoritmos e Python

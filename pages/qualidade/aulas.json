@@ -25,20 +25,20 @@
   },
   {
     "numero": 5,
-    "titulo": "Ferramentas de Gestão de Bugs (Jira/Trello).",
-    "conteudo": "Ferramentas de Gestão de Bugs (Jira/Trello).",
+    "titulo": "Gestão de Bugs com GitHub Projects e Issues.",
+    "conteudo": "Gestão de Bugs com GitHub Projects e Issues.",
     "avaliacao": false
   },
   {
     "numero": 6,
-    "titulo": "Introdução a Testes Automatizados.",
-    "conteudo": "Introdução a Testes Automatizados.",
+    "titulo": "Introdução ao GitHub Actions.",
+    "conteudo": "Introdução ao GitHub Actions.",
     "avaliacao": false
   },
   {
     "numero": 7,
-    "titulo": "Testes de Unidade (xUnit/Jest).",
-    "conteudo": "Testes de Unidade (xUnit/Jest).",
+    "titulo": "Testes de Unidade (Jest).",
+    "conteudo": "Testes de Unidade (Jest).",
     "avaliacao": false
   },
   {
@@ -49,50 +49,38 @@
   },
   {
     "numero": 9,
-    "titulo": "Introdução ao Selenium/Cypress.",
-    "conteudo": "Introdução ao Selenium/Cypress.",
+    "titulo": "Testes manuais vs testes automatizados.",
+    "conteudo": "Testes manuais vs testes automatizados.",
     "avaliacao": false
   },
   {
     "numero": 10,
-    "titulo": "Automação de Testes E2E.",
-    "conteudo": "Automação de Testes E2E.",
+    "titulo": "VCR e chamadas de API seguras.",
+    "conteudo": "VCR e chamadas de API seguras.",
     "avaliacao": false
   },
   {
     "numero": 11,
-    "titulo": "Integração Contínua (CI/CD) e Testes.",
-    "conteudo": "Integração Contínua (CI/CD) e Testes.",
+    "titulo": "BDD com Gherkin.",
+    "conteudo": "BDD com Gherkin.",
     "avaliacao": false
   },
   {
     "numero": 12,
-    "titulo": "Testes de API com Postman.",
-    "conteudo": "Testes de API com Postman.",
-    "avaliacao": false
-  },
-  {
-    "numero": 13,
     "titulo": "Testes de Carga e Performance (JMeter).",
     "conteudo": "Testes de Carga e Performance (JMeter).",
     "avaliacao": false
   },
   {
-    "numero": 14,
-    "titulo": "Qualidade em Métodos Ágeis.",
-    "conteudo": "Qualidade em Métodos Ágeis.",
-    "avaliacao": false
-  },
-  {
-    "numero": 15,
+    "numero": 13,
     "titulo": "Revisão Geral e Melhores Práticas.",
     "conteudo": "Revisão Geral e Melhores Práticas.",
     "avaliacao": false
   },
   {
-    "numero": 16,
-    "titulo": "Avaliação Final / Projeto.",
-    "conteudo": "Avaliação Final / Projeto.",
+    "numero": 14,
+    "titulo": "Avaliação e Projeto Final.",
+    "conteudo": "Avaliação e Projeto Final.",
     "avaliacao": true
   }
 ]
