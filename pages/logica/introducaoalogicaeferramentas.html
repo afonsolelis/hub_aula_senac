@@ -560,6 +560,7 @@
         <div id="progressBar" class="progress-bar bg-dark" role="progressbar" style="width: 0%"></div>
       </div>
       <button id="nextBtn" class="ms-2"><i class="fas fa-chevron-right"></i></button>
+      <button id="fullscreenBtn" class="ms-2"><i class="fas fa-expand"></i></button>
     </div>
 
     <div class="text-center text-muted small d-none d-md-block">
@@ -572,68 +573,7 @@
     </a>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.slide');
-      const totalSlides = slides.length;
-      let currentSlide = 1;
-
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const progressBar = document.getElementById('progressBar');
-
-      function updateProgress() {
-        if (totalSlides <= 1) return;
-        const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
-        if (progressBar) progressBar.style.width = `${progress}%`;
-      }
-
-      function showSlide(n) {
-        if (n < 1 || n > totalSlides) return;
-
-        currentSlide = n;
-
-        // Hide all
-        slides.forEach(s => s.classList.remove('active'));
-
-        // Show target
-        const targetSlide = document.getElementById(`slide-${n}`);
-        if (targetSlide) {
-          targetSlide.classList.add('active');
-        }
-
-        // Update buttons
-        if (prevBtn) prevBtn.disabled = (currentSlide === 1);
-        if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides);
-
-        updateProgress();
-      }
-
-      function nextSlide() {
-        if (currentSlide < totalSlides) {
-          showSlide(currentSlide + 1);
-        }
-      }
-
-      function prevSlide() {
-        if (currentSlide > 1) {
-          showSlide(currentSlide - 1);
-        }
-      }
-
-      // Attach Listeners
-      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === "ArrowRight") nextSlide();
-        if (event.key === "ArrowLeft") prevSlide();
-      });
-
-      // Init (Ensure correct start)
-      showSlide(1);
-    });
-  </script>
+  <script src="../../js/standard_slides.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

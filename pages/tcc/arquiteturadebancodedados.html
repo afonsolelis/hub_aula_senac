@@ -108,8 +108,12 @@
     <!-- Footer Navigation -->
     <footer class="slide-footer">
         <div class="slide-controls">
-            <button id="prevBtn" onclick="prevSlide()" disabled><i class="fas fa-chevron-left"></i></button>
-            <button id="nextBtn" onclick="nextSlide()" class="ms-2"><i class="fas fa-chevron-right"></i></button>
+            <button id="prevBtn"  disabled><i class="fas fa-chevron-left"></i></button>
+      <div class="progress mx-3" style="width: 100px; height: 6px;">
+        <div id="progressBar" class="progress-bar bg-dark" role="progressbar" style="width: 0%"></div>
+      </div>
+            <button id="nextBtn"  class="ms-2"><i class="fas fa-chevron-right"></i></button>
+      <button id="fullscreenBtn" class="ms-2"><i class="fas fa-expand"></i></button>
         </div>
 
         <div class="text-center text-muted small d-none d-md-block">
@@ -122,42 +126,7 @@
         </a>
     </footer>
 
-    <script>
-        let currentSlide = 1;
-        const totalSlides = 5;
-
-        function showSlide(n) {
-            // Remove active class from all slides
-            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-
-            // Show current slide
-            document.getElementById('slide-' + n).classList.add('active');
-
-            // Update button states
-            document.getElementById('prevBtn').disabled = (n === 1);
-            document.getElementById('nextBtn').disabled = (n === totalSlides);
-        }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                showSlide(currentSlide);
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                showSlide(currentSlide);
-            }
-        }
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "ArrowRight") nextSlide();
-            if (event.key === "ArrowLeft") prevSlide();
-        });
-    </script>
+    <script src="../../js/standard_slides.js"></script>
 
 </body>
 </html>
